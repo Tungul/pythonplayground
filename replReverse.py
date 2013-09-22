@@ -1,4 +1,7 @@
 import socket
+import android
+
+droid = android.Android()
 
 client = socket.create_connection(("192.168.1.148", 8675)) # to connect back to home to $nc -l -p 8675
 
