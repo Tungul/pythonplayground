@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Text to Speech</title>
+		<script>
+			var droid = new Android();
+			var speak = function() {
+				droid.postEvent("say", document.getElementById("say").value);
+			}
+			var newItem = function(data) {
+
+			}
+
+			function connect() {
+				droid.postEvent("connect");
+			}
+
+			function appendLog(str) {
+				var divlog = document.getElementById('log');
+				divlog.innerHtml += str + "<br />";
+			}
+			function clearLog() {
+				var divlog = document.getElementById('log');
+				divlog.innerHtml = "";
+			}
+		</script>
+	</head>
+	<body>
+		<button onClick='connect();'>Connect</button>
+		<div id='log'></div>
+	</body>
+</html>
