@@ -1,6 +1,6 @@
-import threading
+import threading, sys
 
-target = 100000
+target = int(sys.argv[1])
 
 toWrite = []
 output = open('primes.txt', 'w')
