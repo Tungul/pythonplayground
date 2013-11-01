@@ -1,6 +1,6 @@
 import threading
 
-target = 1000
+target = 100000
 
 toWrite = []
 output = open('primes.txt', 'w')
@@ -27,8 +27,12 @@ primes = []
 outputThread = WriteOutPrimes()
 outputThread.start()
 
+print 'Generating source map...'
+
 for i in range(1, target + 1):
 	source.append(1)
+
+print 'Beginning calculations.'
 
 for i in range(2, target):
 	try:
@@ -39,10 +43,15 @@ for i in range(2, target):
 				try:
 					source[j] = 0
 				except IndexError:
-					print 'Index Error in all-loop', str(i), str(j)
+					print 'IndexError in all-loop', str(i), str(j)
 					continue
-	except:
-		print 'Error at main loop', str(i)
+	except IndexError:
+		print 'IndexError at main loop', str(i)
+	except KeyboardInterrupt:
+		print 'Received interrupt, shutting down promptly.'
+		toWrite.append('Done')
+		quit()
+
 	if i == (target / 2):
 		print 'Halfway there in calculations...'
 
