@@ -3,15 +3,15 @@
 		<title>Text to Speech</title>
 		<script>
 			var droid = new Android();
-			var speak = function() {
-				droid.postEvent("say", document.getElementById("say").value);
-			}
-			var newItem = function(data) {
+			// var speak = function() {
+			// 	droid.postEvent("say", document.getElementById("say").value);
+			// }
+			// var newItem = function(data) {
 
-			}
+			// }
 
 			function connect() {
-				droid.postEvent("connect");
+				droid.eventPost("connect", "asdf");
 			}
 
 			function appendLog(str) {
@@ -22,6 +22,12 @@
 				var divlog = document.getElementById('log');
 				divlog.innerHtml = "";
 			}
+
+			var display = function(data) {
+				appendLog(data);
+			}
+
+			droid.registerCallback("berp", display);
 		</script>
 	</head>
 	<body>
