@@ -8,3 +8,5 @@ def bad_fib(x):
 	return _bad_fib(x)
 
 print bad_fib(25);
+
+# lol noob
