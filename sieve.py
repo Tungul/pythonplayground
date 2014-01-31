@@ -63,7 +63,7 @@ print 'closing file object'
 
 for i in range(1, len(primes), 5):
 	try:
-		print "PRIME:", primes[i], primes[i+1], primes[i+2], primes[i+3], primes[i+4]
+		# print "PRIME:", primes[i], primes[i+1], primes[i+2], primes[i+3], primes[i+4]
 	except:
 		continue
 
