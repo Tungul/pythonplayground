@@ -16,7 +16,7 @@ class WriteOutPrimes(threading.Thread):
 				if value != None and value != 'Done':
 					output.write(str(value) + '\n')
 				elif value == 'Done':
-					print 'Thread done, dying...'
+					print 'CCCThread done, dying...'
 					break
 			except IndexError:
 				continue
